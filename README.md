@@ -8,10 +8,10 @@ This project analyzes transactional data from an e-commerce retailer to uncover 
 
 	The analysis follows an end-to-end approach:
 
-Data cleaning and preparation (SQL)
-KPI definition
-Exploratory data analysis
-Interactive dashboard development (Streamlit)
+- Data cleaning and preparation (SQL)
+- KPI definition
+- Exploratory data analysis
+- Interactive dashboard development (Streamlit)
 
 
 -----
@@ -21,10 +21,10 @@ Interactive dashboard development (Streamlit)
 
 	This analysis aims to answer the following:
 
-How does revenue evolve over time?
-Which countries drive most of the revenue?
-Which products generate the highest revenue?
-How do return rates vary across products, and are there any anomalies in return behavior?
+- How does revenue evolve over time?
+- Which countries drive most of the revenue?
+- Which products generate the highest revenue?
+- How do return rates vary across products, and are there any anomalies in return behavior?
 
 
 -----
@@ -75,9 +75,9 @@ How do return rates vary across products, and are there any anomalies in return 
 
 	The dataset was cleaned using the following steps:
 
-Removed rows with missing customer IDs  
-Excluded invalid transactions (zero or negative prices)  
-Removed zero quantities  
+- Removed rows with missing customer IDs  
+- Excluded invalid transactions (zero or negative prices)  
+- Removed zero quantities  
 
 Negative quantities (returns) were preserved to enable return analysis.
 
@@ -86,10 +86,10 @@ Negative quantities (returns) were preserved to enable return analysis.
 
 🛠️ Tech Stack
 
-SQL (PostgreSQL)
-Python (Pandas)
-Streamlit
-Altair
+- SQL (PostgreSQL)
+- Python (Pandas)
+- Streamlit
+- Altair
 
 
 -----
@@ -98,10 +98,10 @@ Altair
 📊 Dashboard
 
 The dashboard includes:
-Monthly revenue trend
-Top 10 countries by revenue
-Top 10 products by revenue
-Return rate analysis
+- Monthly revenue trend
+- Top 10 countries by revenue
+- Top 10 products by revenue
+- Return rate analysis
 
 ![Dashboard](asset/dashboard.png)
 
