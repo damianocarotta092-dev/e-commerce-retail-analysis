@@ -32,8 +32,8 @@ with kpi1:
     st.metric("💰 Total Revenue", f"{total_revenue/1_000_000:.2f}M $")
 
 with kpi2:
-    st.metric("📦 Total Orders", f"{total_orders:,}")
-
+    st.metric("📦 Total Orders", f"{total_orders:,}".replace(",", "."))
+    
 with kpi3:
     st.metric("👤 Total Customers", f"{total_customers:,}")
 
