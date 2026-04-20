@@ -103,7 +103,7 @@ Top 10 countries by revenue
 Top 10 products by revenue
 Return rate analysis
 
-![Dashboard](assets/dashboard.png)
+![Dashboard](asset/dashboard.png)
 
 
 -----
