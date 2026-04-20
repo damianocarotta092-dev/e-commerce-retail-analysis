@@ -35,7 +35,7 @@ with kpi2:
     st.metric("📦 Total Orders", f"{total_orders:,}".replace(",", "."))
     
 with kpi3:
-    st.metric("👤 Total Customers", f"{total_customers:,}")
+    st.metric("👤 Total Customers", f"{total_customers:,}".replace(",",".")
 
 with kpi4:
     st.metric("🔴 Avg Return Rate", f"{avg_return_rate:.2f}%")
