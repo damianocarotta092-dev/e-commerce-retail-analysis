@@ -111,4 +111,4 @@ The dashboard includes:
 
 🌐 Live Demo
 
-
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://e-commerce-retail-analysis-damiano-carotta.streamlit.app/)
