@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 st.set_page_config(page_title="Retail Analysis", layout="wide")
 
 st.title("📊 E-commerce Retail Analysis")
@@ -9,12 +11,12 @@ st.title("📊 E-commerce Retail Analysis")
 st.markdown("Dashboard overview of monthly revenue, top countries, top products sold and return rate")
 
 # Load data
-monthly_revenue = pd.read_csv("data/analysis/monthly_revenue.csv")
-country = pd.read_csv("data/analysis/country_analysis.csv")
-customer = pd.read_csv("data/analysis/customer_analysis.csv")
-product = pd.read_csv("data/analysis/product_analysis.csv")
-return_product = pd.read_csv("data/analysis/return_analysis.csv")
-orders = pd.read_csv("data/analysis/orders_analysis.csv")
+monthly_revenue = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "monthly_revenue.csv"))
+country = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "country_analysis.csv"))
+customer = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "customer_analysis.csv"))
+product = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "product_analysis.csv"))
+return_product = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "return_analysis.csv"))
+orders = pd.read_csv(os.path.join(BASE_DIR, "DATA", "analysis", "orders_analysis.csv"))
 
 # KPI calculations
 total_revenue = (monthly_revenue["revenue"]).sum()
