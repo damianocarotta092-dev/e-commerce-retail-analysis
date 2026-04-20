@@ -29,7 +29,7 @@ avg_return_rate = return_product["return_rate_percentage"].mean()
 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
 
 with kpi1:
-    st.metric("💰 Total Revenue", f"{total_revenue/1_000_000:.2f}M")
+    st.metric("💰 Total Revenue", f"{total_revenue/1_000_000:.2f}M $")
 
 with kpi2:
     st.metric("📦 Total Orders", f"{total_orders:,}")
