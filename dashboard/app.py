@@ -47,8 +47,21 @@ col1, spacer, col2 = st.columns([1, 0.2, 1])
 
 with col1:
     st.subheader("📈 Monthly Revenue")
+
     monthly_revenue["month"] = pd.to_datetime(monthly_revenue["month"])
-    st.line_chart(monthly_revenue.set_index("month")["revenue"])
+
+    chart = alt.Chart(monthly_revenue).mark_line().encode(
+        x=alt.X("month:T", title="Month"),
+        y=alt.Y(
+            "revenue:Q",
+            title="Revenue ($)",
+            axis=alt.Axis(format="$,.0f")  # <-- formato valuta
+        ),
+        tooltip=["month:T", "revenue:Q"]
+    )
+
+    st.altair_chart(chart, use_container_width=True)
+
     st.caption("Note: December data is incomplete and not directly comparable.")
 
 with col2:
