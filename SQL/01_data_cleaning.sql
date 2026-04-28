@@ -1,47 +1,24 @@
 -- ============================================
--- 02_sales_analysis.sql
+-- 01_data_cleaning.sql
 -- ============================================
 -- Objective:
--- Analyze sales performance and revenue trends
+-- Clean raw transactional data and create
+-- the analysis-ready table: online_retail_clean
 -- ============================================
 
+DROP TABLE IF EXISTS online_retail_clean;
 
--- ============================================
--- QUESTION 1:
--- How does revenue evolve over time?
--- ============================================
-
-SELECT
-    DATE_TRUNC('month', invoice_date) AS month,
-    SUM(quantity * unit_price) AS revenue
-FROM online_retail_clean
-GROUP BY month
-ORDER BY month;
-
-
-
--- ============================================
--- QUESTION 2:
--- Which countries generate the highest revenue?
--- ============================================
-
-SELECT
-    country,
-    SUM(quantity * unit_price) AS revenue
-FROM online_retail_clean
-GROUP BY country
-ORDER BY revenue DESC;
-
-
-
--- ============================================
--- QUESTION 3:
--- What is the distribution of order values?
--- ============================================
-
+CREATE TABLE online_retail_clean AS
 SELECT
     invoice_no,
-    SUM(quantity * unit_price) AS order_value
-FROM online_retail_clean
-GROUP BY invoice_no
-ORDER BY order_value DESC;
+    stock_code,
+    description,
+    quantity,
+    invoice_date,
+    unit_price,
+    customer_id,
+    TRIM(country) AS country
+FROM online_retail
+WHERE customer_id IS NOT NULL
+  AND quantity <> 0
+  AND unit_price > 0;
